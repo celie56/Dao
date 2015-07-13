@@ -1,0 +1,30 @@
+html, body{
+    overflow: hidden;
+    margin: 0;
+}
+#board{
+	margin-left: auto;
+	margin-right: auto;
+}
+tr{
+    25%;
+}
+.square {
+    margin: 1%;
+    background-color:rgb(217,217,217);
+    border: 1px solid black;
+}
+h2{
+    font-size: 20vmin;
+    text-align: center;
+}
+
+.current_turn {
+	background-color: yellow;
+}
+.current_turn:hover {
+	cursor: pointer;
+}
+.available {
+	background-color: pink;
+}
