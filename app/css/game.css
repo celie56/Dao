@@ -1,24 +1,8 @@
-html, body{
-    overflow: hidden;
-    margin: 0;
-}
-#board{
-	margin-left: auto;
-	margin-right: auto;
-}
-tr{
-    25%;
-}
-.square {
-    margin: 1%;
-    background-color:rgb(217,217,217);
-    border: 1px solid black;
-}
-h2{
-    font-size: 20vmin;
-    text-align: center;
-}
 
+
+.square {
+	background-color: #d9d9d9;
+}
 .current_turn {
 	background-color: yellow;
 }

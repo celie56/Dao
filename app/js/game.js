@@ -1,10 +1,7 @@
-window.$ = window.jQuery = require('./js/jquery.js');
-
-
 // general setters
 var board = $('#board');
-var player1 = "<h2>X</h2>";
-var player2 = "<h2>O</h2>";
+var player1 = "X";
+var player2 = "O";
 
 var getSquare = function(x, y){
 	var square_id = "#square_" + x.toString() + "_" + y.toString();
@@ -20,14 +17,11 @@ var getY = function(square){
 //Board Set Up
 
 for (var x = 0; x < 4; x++){
-    var output = "<tr class='row'>"
 	for (var y = 0; y < 4; y++){
 		var square_class = "square";
 		var square_id = "square_" + x.toString() + "_" + y.toString();
-        output += "<td id=\"" + square_id + "\" class=\"" + square_class + "\"></td>";
-//		board.append("<div id=\"" + square_id + "\" class=\"" + square_class + "\"></div>");
+		board.append("<div id=\"" + square_id + "\" class=\"" + square_class + "\"></div>");
 	}
-    board.append(output + "</tr>");
 //	board.append("<br>");
 }
 
@@ -131,7 +125,7 @@ var swapTurn = function(){
 // swap the attributes of the empty square and the player square
 var movePlayer = function(player, place){
 	clearMoves();
-	place.html("<h2>" + player.text() + "</h2>");
+	place.html(player.text());
 	player.html("");
 	place.addClass("player");
 	place.addClass(current_turn);

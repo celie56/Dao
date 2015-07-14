@@ -1,35 +1,13 @@
-// Hello hello
-
-var remote = require('remote');
-var BrowserWindow = remote.require('browser-window'); 
-
-
-document.getElementById("min-btn").addEventListener("click", function (e) {
-   var window = remote.getCurrentWindow();
-   window.minimize(); 
-});
-
-document.getElementById("max-btn").addEventListener("click", function (e) {
-   var window = remote.getCurrentWindow();
-   window.maximize(); 
-});
-
-document.getElementById("close-btn").addEventListener("click", function (e) {
-   var window = BrowserWindow.getFocusedWindow();
-   window.close();
-}); 
-
 // dynamically change board size
 var resizeFunc = function(){
-    var menuheight = 30;
-    var newsize = $(window).width() < $(window).height() - menuheight ?
-                    $(window).width() :
-                    $(window).height() - menuheight;
-    $('#board').height(newsize).width(newsize);
-    $('.square').height(newsize/4).width(newsize/4);
+    var newsize = $('.box').width() / 4 - 3.5;
+//    $('#board').height(newsize).width(newsize);
+    $('.square').height(newsize).width(newsize);
+    $('.square').css({'font-size': newsize*.9});
 }
 $(window).resize(function(){
     resizeFunc();
 });
-
-resizeFunc();
+$(document).ready(function(){
+    resizeFunc();
+});
