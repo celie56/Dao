@@ -28,15 +28,6 @@ app.on('ready', function () {
   // and load the index.html of the app.
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
-  // Let's write to a file
-  fs.writeFile(__dirname + '/debugout.txt', "Hello World", function (err) {
-    if (err) {
-      return console.log(err);
-    }
-  });
-
-  // console.log(mainWindow.webContents);
-
 
   // Open the devtools.
   mainWindow.openDevTools();
